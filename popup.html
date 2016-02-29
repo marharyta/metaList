@@ -1,0 +1,154 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+-->
+<html>
+<head>
+  <title>Metalist</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <!-- links -->
+      <nav>
+        <ul>
+          <li><a href="#general">General</a></li>
+          <li><a href="#headers">Headers</a></li>
+          <li><a href="#image">Images</a></li>
+          <li><a href="#link">Links</a></li>
+        </ul>
+      </nav>
+
+      <!-- page structure -->
+
+      <div class="container-fluid tabs ">
+        <!-- general info -->
+        <div id="general" class="row tab general-info">
+
+          <!-- url -->
+          <div class="url col-lg-12">
+            <h2 class="col-lg-6">URL</h2> 
+            <p id="url" class="col-lg-6"></p>
+          </div>
+
+          <!--title -->
+          <div class="title col-lg-12">
+            <h2 class="col-lg-6">Title Tag</h2>
+            <p id="char" class="col-lg-6"></p>
+            <p id="title" class="col-lg-6"></p>
+            
+          </div>
+
+          <!--metatag general info -->
+          <div class="metatags col-lg-12">
+            <h2 class="col-lg-6">Metatags</h2>
+            <ul id="status" class="col-lg-6">
+            </ul>
+          </div>
+
+
+        </div>
+
+
+
+        <!--Headers section -->
+        <div id="headers" class="row tab headers">
+          <!-- TO BE DONE -->
+          <!-- <div id="tags-in-order"></div>-->
+          <div class="col-lg-12">
+            <h2 class="col-lg-6">H1</h2>
+            <span id="h1Length" class="col-lg-6"></span>
+            <ul id="headers-h1" class="header-list" class="col-lg-6">
+            </ul>
+          </div>
+
+          <div  class="col-lg-12">
+           <h2> H2</h2>
+           <span id="h2Length" class="col-lg-6"></span>
+           <ul id="headers-h2" class="header-list" class="col-lg-6">
+           </ul>
+         </div> 
+
+         <div class="col-lg-12">
+          <h2 class="col-lg-6">H3</h2>
+          <span id="h3Length" class="col-lg-6"></span>
+          <ul id="headers-h3" class="header-list" class="col-lg-6">
+          </ul>
+        </div>
+
+        <div class="col-lg-12">
+          <h2 class="col-lg-6">H4</h2>
+          <span id="h4Length" class="col-lg-6"></span>
+          <ul id="headers-h4" class="header-list" class="col-lg-6">
+          </ul>
+        </div>
+
+        <div class="col-lg-12">
+          <h2 class="col-lg-6">H5</h2>
+          <span id="h5Length" class="col-lg-6"></span>
+          <ul id="headers-h5" class="header-list" class="col-lg-6">
+          </ul>
+        </div>
+
+        <div class="col-lg-12">
+         <h2 class="col-lg-6">H6</h2>
+         <span id="h6Length" class="col-lg-6"></span>
+         <ul id="headers-h6" class="header-list" class="col-lg-6">
+         </ul>
+       </div>
+
+     </div>
+
+     <div id="image" class="row tab images">
+        
+          <h2 class="col-lg-12">Images</h2>
+          <div class="col-lg-3 col-md-3">
+            <h4>All</h4>
+            <span id="imageLength" class="col-lg-3 col-md-3"></span>
+          </div>
+          
+          <div class="col-lg-3">
+            <h4>No alt tag</h4>
+            <span id="noaltimages"></span>
+          </div>
+          <div class="col-lg-3">
+            <h4>No title tag</h4>
+            <span id="notitleimages"></span>
+          </div>
+          
+          <ul id="images" class="header-list">
+          </ul>
+       
+    </div>
+
+    <div id="link" class="row tab links">
+        <div>
+          <h2>Links</h2>
+          <span id="linkLength"></span>
+          <ul id="links" class="header-list">
+          </ul>
+        </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+</body>
+</html>
+

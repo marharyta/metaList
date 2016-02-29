@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "MetaList",
+  "description": "This extension shows meta tags on the page",
+  "version": "1.0",
+  /*"chrome_url_overrides" : {
+    "newtab": "index.html"
+  },*/
+
+  "browser_action": {
+    "default_icon": "metalist_icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    /*{
+      "matches": ["http://www.google.com/*"],
+      //"css": ["mystyles.css"],
+      "js": [ "js/time.js"]
+    },*/
+    {
+      "matches": ["<all_urls>"],
+      //"exclude_matches": ["http://www.google.com/*"],
+      //"css": ["mystyles.css"],
+      "js": [ "js/meta.js"],
+      "all_frames": true
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "http://www.google.com/",
+    "https://www.google.com/",
+    "http://*/",
+    "https://*/",
+    "browsingData",
+    "http://*.google.com/",
+    "unlimitedStorage"
+  ]
+}
